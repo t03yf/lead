@@ -7,149 +7,114 @@
 
 <style>
 :root {
-  --bg-main:#0e0e11;
-  --bg-section:#141418;
-  --bg-soft:#1b1b22;
-  --text-main:#eaeaf0;
-  --text-muted:#a1a1b3;
-  --accent:#4f8cff;
-  --border:#2a2a36;
+  --bg:#0d0d0f;
+  --card:#15151a;
+  --soft:#1c1c22;
+  --border:#2a2a35;
+  --text:#eaeaf0;
+  --muted:#a0a0b5;
+  --accent:#ff4500;
 }
 
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Inter, system-ui, sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,system-ui,sans-serif;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
 }
 
-body {
-  background:var(--bg-main);
-  color:var(--text-main);
-  line-height:1.75;
-}
-
-.container {
+.container{
   max-width:1100px;
   margin:auto;
   padding:90px 20px;
 }
 
-/* HERO */
-.hero h1 {
-  font-size:50px;
-  max-width:900px;
-}
+h1{font-size:48px;margin-bottom:20px;}
+h2{font-size:30px;margin-bottom:24px;color:var(--accent);}
+h3{font-size:22px;margin-bottom:16px;}
 
-.hero p {
-  margin-top:22px;
-  color:var(--text-muted);
-  max-width:760px;
-  font-size:18px;
-}
+p{color:var(--muted);max-width:850px;}
 
-/* SECTIONS */
-.section {
-  margin-top:120px;
-}
+.section{margin-top:110px;}
 
-.section-title {
-  font-size:28px;
-  margin-bottom:28px;
-}
-
-.card {
-  background:var(--bg-section);
+.card{
+  background:var(--card);
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:42px;
+  border-radius:16px;
+  padding:48px;
 }
 
-.strip {
-  background:var(--bg-soft);
+.strip{
+  background:var(--soft);
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:46px;
+  border-radius:16px;
+  padding:48px;
 }
 
-ul {
-  list-style:none;
-  margin-top:18px;
-}
-
-li {
+ul{list-style:none;margin-top:20px;}
+li{
   position:relative;
   padding-left:22px;
   margin-bottom:14px;
 }
-
-li::before {
+li::before{
   content:"•";
   position:absolute;
   left:0;
   color:var(--accent);
-  font-size:20px;
+  font-size:22px;
 }
 
-p + p {
-  margin-top:18px;
-}
-
-/* CTA */
-.cta {
-  margin-top:90px;
-  padding:48px;
-  border-radius:16px;
-  background:linear-gradient(135deg,#1c1f3a,#10101a);
+.cta{
+  background:linear-gradient(135deg,#1a1a1f,#101013);
   border:1px solid var(--border);
+  border-radius:18px;
+  padding:50px;
 }
 
-.whatsapp {
+.whatsapp{
   display:inline-block;
-  margin-top:32px;
-  padding:16px 30px;
+  margin-top:28px;
+  padding:16px 32px;
   background:var(--accent);
   color:#fff;
-  border-radius:10px;
   text-decoration:none;
+  border-radius:10px;
   font-weight:600;
 }
 
-footer {
-  margin-top:130px;
-  color:var(--text-muted);
+footer{
+  margin-top:140px;
   font-size:14px;
+  color:var(--muted);
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <!-- HERO -->
-<section class="hero">
-  <h1>AI Lead Automation System</h1>
+<section>
+  <h1>Your leads aren’t failing.<br>Your system is.</h1>
   <p>
-    This system exists to solve one problem:
-    <br><strong>loss of control after a lead enters your business.</strong>
+    Businesses don’t lose revenue because of traffic.
+    They lose it after the lead arrives.
   </p>
 </section>
 
-<!-- CORE STATEMENT -->
+<!-- PROBLEM -->
 <section class="section">
   <div class="card">
     <p>
-      Most businesses don’t fail at generating demand.
-      They fail at managing it.
+      Leads come in.
+      Responses are delayed.
+      Follow-ups depend on memory.
     </p>
     <p>
-      Leads arrive through multiple channels.
-      Responses depend on availability.
-      Follow-ups rely on memory.
-    </p>
-    <p>
-      This system replaces that uncertainty with structure.
+      The issue isn’t effort.
+      It’s lack of structure.
     </p>
   </div>
 </section>
@@ -160,101 +125,141 @@ footer {
     <h3>Reality Check</h3>
     <ul>
       <li>Leads arrive without prioritization</li>
-      <li>Responses are delayed or inconsistent</li>
-      <li>Follow-ups are missed</li>
-      <li>Information is scattered across tools</li>
-      <li>Decisions are made without reliable data</li>
+      <li>Replies depend on availability</li>
+      <li>Follow-ups are forgotten</li>
+      <li>Data lives across tools</li>
+      <li>Decisions are educated guesses</li>
     </ul>
   </div>
 </section>
 
-<!-- WHAT THE SYSTEM IS -->
+<!-- WHAT THIS IS -->
 <section class="section">
-  <h2 class="section-title">What this system is</h2>
+  <h2>What this actually is</h2>
   <div class="card">
     <p>
-      This is a complete AI-powered lead operations system.
-      It is designed to run quietly in the background of a business
-      and enforce consistency across the entire lead lifecycle.
+      This is not a CRM.
+      Not a SaaS subscription.
+      Not consulting.
     </p>
     <p>
-      From the moment a lead appears,
-      the system takes over routing, qualification, communication,
-      follow-ups, and data structuring — automatically.
+      It is a <strong>fully built lead-handling system</strong>
+      composed of automations, logic, and workflows
+      designed to operate your inbound leads end-to-end.
+    </p>
+    <p>
+      Think of it as an internal lead engine
+      installed into your business.
     </p>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- WHAT YOU RECEIVE DAY 1 -->
 <section class="section">
-  <h2 class="section-title">How it operates</h2>
+  <h2>What you receive (Day 1)</h2>
   <div class="card">
     <ul>
-      <li>Leads are captured from existing sources (forms, DMs, chat, databases)</li>
-      <li>An AI layer evaluates intent and context</li>
-      <li>Each lead is classified and prioritized</li>
-      <li>Predefined responses are sent instantly</li>
-      <li>Follow-up sequences run without manual intervention</li>
-      <li>All data is logged in a structured format</li>
+      <li>A complete AI Lead Automation System</li>
+      <li>Pre-built workflows for capturing, routing, and follow-ups</li>
+      <li>Lead qualification & prioritization logic</li>
+      <li>Automated response and follow-up sequences</li>
+      <li>Centralized lead structure (no scattered data)</li>
+      <li>Video walkthrough explaining the full system</li>
+      <li>Step-by-step implementation guide</li>
     </ul>
+    <p>
+      You receive an operational system —
+      not templates, not theory.
+    </p>
   </div>
 </section>
 
-<!-- WHAT YOU RECEIVE -->
+<!-- DONE FOR YOU -->
 <section class="section">
-  <h2 class="section-title">What you receive</h2>
+  <h2>What “done-for-you” means here</h2>
   <div class="card">
-    <ul>
-      <li>The complete AI Lead Automation System (ready to deploy)</li>
-      <li>All workflow logic and configurations</li>
-      <li>A detailed implementation guide</li>
-      <li>Full video walkthrough explaining operation and customization</li>
-      <li>Instructions to adapt the system to any industry</li>
-    </ul>
-    <p style="color:var(--text-muted);">
-      The system is delivered as an operational asset — not a concept.
+    <p>
+      The system is already designed, structured, and tested.
+    </p>
+    <p>
+      You are not asked to architect anything.
+      You are guided to deploy it.
+    </p>
+    <p>
+      No building from scratch.
+      No guessing.
+      No consulting calls required.
+    </p>
+  </div>
+</section>
+
+<!-- WHO BUILT THIS -->
+<section class="section">
+  <h2>Who this was built by</h2>
+  <div class="card">
+    <p>
+      This system was built from operating real businesses
+      handling live lead volume —
+      where missed follow-ups meant lost revenue.
+    </p>
+    <p>
+      It exists because manual lead handling does not scale.
     </p>
   </div>
 </section>
 
 <!-- WHY THIS WORKS -->
 <section class="section">
-  <h2 class="section-title">Why this works</h2>
+  <h2>Why this works</h2>
   <div class="card">
     <ul>
-      <li>No persuasion language</li>
-      <li>No price justification</li>
-      <li>No marketing narratives</li>
+      <li>No begging</li>
+      <li>No price explanations</li>
+      <li>No marketing tone</li>
       <li>Reads like internal infrastructure</li>
-      <li>Authority is created through clarity and structure</li>
+      <li>Authority through clarity</li>
     </ul>
   </div>
 </section>
 
-<!-- PRICING LOGIC -->
+<!-- PILOT -->
 <section class="section">
-  <h2 class="section-title">Why it is offered as a pilot</h2>
+  <h2>Why this is a pilot release</h2>
   <div class="card">
     <ul>
-      <li>This is a controlled early release</li>
-      <li>Access is intentionally limited</li>
-      <li>Distributed to early adopters only</li>
+      <li>Controlled early access</li>
+      <li>Limited distribution</li>
       <li>Not publicly marketed</li>
-      <li>No mass distribution</li>
-      <li>No discount framing</li>
+      <li>Available only to operators ready to deploy systems</li>
     </ul>
   </div>
 </section>
 
-<!-- DIRECT ACCESS -->
+<!-- RISK -->
+<section class="section">
+  <h2>Risk & fit</h2>
+  <div class="card">
+    <p>
+      This system is not for everyone.
+    </p>
+    <p>
+      If your business does not handle leads consistently,
+      or you are not ready to operate with systems,
+      this will not fit.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section class="section">
   <div class="cta">
     <h3>Direct Access</h3>
     <p>
-      For questions related to system capabilities or implementation.
+      For questions related to system capabilities
+      or deployment fit.
     </p>
     <a class="whatsapp" href="https://wa.me/213676127853" target="_blank">
-      Chat on WhatsApp
+      Contact via WhatsApp
     </a>
   </div>
 </section>
@@ -264,6 +269,5 @@ footer {
 </footer>
 
 </div>
-
 </body>
 </html>
