@@ -880,4 +880,77 @@
 
                 <div class="guarantee-exclusions">
                     <h4>What's Not Covered:</h4>
-                    <p>This isn't a "try it and see" policy. Refunds aren't available if you don't deploy the system, don't have leads to run through it, or simply decide you don't want to use automation. This protects serious buyers from people who aren't
+                    <p>This isn't a "try it and see" policy. Refunds aren't available if you don't deploy the system, don't have leads to run through it, or simply decide you don't want to use automation. This protects serious buyers from people who aren't committed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FINAL CTA
+         EDIT: Button text and price
+         ======================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Deploy the Lead Automation Infrastructure</h2>
+            
+            <p class="subhead">
+                Stop losing deals to slow response times. Get the complete system, deploy it, and eliminate manual lead handling.
+            </p>
+
+            <div class="price-line">
+                <strong>$1,497</strong> — One-time payment
+            </div>
+
+            <!-- EDIT: Replace # with your checkout URL -->
+            <a href="#" class="cta-button" id="cta-primary">Get the System Now</a>
+
+            <p class="cta-details">
+                Secure checkout. Access delivered within 24 hours.<br>
+                30-day guarantee. No recurring fees.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         EDIT: Contact information
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <p>Questions about fit or deployment? Email: support@yourdomain.com</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         TRACKING & ANALYTICS
+         Add your tracking code here
+         ======================================== -->
+    <script>
+        // CTA click tracking
+        document.getElementById('cta-primary').addEventListener('click', function(e) {
+            // Add your analytics tracking here
+            // Example: gtag('event', 'cta_click', { 'value': 1497 });
+            console.log('CTA clicked - Purchase intent tracked');
+        });
+
+        // Scroll depth tracking (optional)
+        let scrollMarkers = [25, 50, 75, 100];
+        let triggeredMarkers = [];
+        
+        window.addEventListener('scroll', function() {
+            let scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            
+            scrollMarkers.forEach(marker => {
+                if (scrollPercent >= marker && !triggeredMarkers.includes(marker)) {
+                    triggeredMarkers.push(marker);
+                    // Add your analytics tracking here
+                    // Example: gtag('event', 'scroll_depth', { 'percent': marker });
+                    console.log('Scroll depth: ' + marker + '%');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
