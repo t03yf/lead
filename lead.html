@@ -14,10 +14,24 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #0d0d0d;
+            --bg-secondary: #0f0f0f;
+            --bg-tertiary: #141414;
+            --text-primary: #ffffff;
+            --text-secondary: #d4d4d4;
+            --text-tertiary: #b4b4b4;
+            --text-muted: #949494;
+            --accent-beige: #c9b896;
+            --accent-beige-dark: #a89775;
+            --border-subtle: #1f1f1f;
+            --border-medium: #2f2f2f;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-            background: #0d0d0d;
-            color: #d4d4d4;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
             line-height: 1.65;
             font-size: 18px;
             -webkit-font-smoothing: antialiased;
@@ -34,7 +48,7 @@
 
         .section {
             padding: 90px 0;
-            border-bottom: 1px solid #1f1f1f;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .section:last-of-type {
@@ -43,13 +57,12 @@
 
         /* ========================================
            TYPOGRAPHY
-           Edit these blocks to change page copy
            ======================================== */
         h1 {
             font-size: 44px;
             font-weight: 600;
             line-height: 1.15;
-            color: #ffffff;
+            color: var(--text-primary);
             margin-bottom: 28px;
             letter-spacing: -0.025em;
         }
@@ -58,7 +71,7 @@
             font-size: 32px;
             font-weight: 600;
             line-height: 1.25;
-            color: #ffffff;
+            color: var(--text-primary);
             margin-bottom: 24px;
             letter-spacing: -0.02em;
         }
@@ -66,32 +79,30 @@
         h3 {
             font-size: 22px;
             font-weight: 600;
-            color: #ffffff;
+            color: var(--text-primary);
             margin-bottom: 14px;
             letter-spacing: -0.01em;
         }
 
         p {
             margin-bottom: 20px;
-            color: #b4b4b4;
+            color: var(--text-tertiary);
         }
 
         strong {
-            color: #ffffff;
+            color: var(--text-primary);
             font-weight: 600;
         }
 
         .subhead {
             font-size: 21px;
             line-height: 1.5;
-            color: #c4c4c4;
+            color: var(--text-secondary);
             margin-bottom: 32px;
         }
 
         /* ========================================
-           HERO SECTION
-           Primary headline and hook
-           EDIT: Main pain point and subheadline
+           HERO SECTION - TECHNICAL HOOK
            ======================================== */
         .hero {
             padding: 140px 0 100px;
@@ -106,55 +117,152 @@
             margin-bottom: 40px;
         }
 
-        .hero-stat {
-            background: #141414;
-            border-left: 3px solid #404040;
-            padding: 20px 24px;
-            margin-bottom: 32px;
-            font-size: 17px;
-            color: #a4a4a4;
+        /* Technical System Flow Diagram */
+        .system-flow {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-medium);
+            border-left: 3px solid var(--accent-beige);
+            padding: 28px 32px;
+            margin: 36px 0;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 15px;
         }
 
-        .hero-stat strong {
-            color: #e4e4e4;
+        .flow-title {
+            color: var(--accent-beige);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .flow-sequence {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .flow-node {
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-medium);
+            font-size: 14px;
+        }
+
+        .flow-arrow {
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .flow-node.failure {
+            opacity: 0.4;
+            position: relative;
+        }
+
+        .flow-gap {
+            color: var(--accent-beige);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .flow-warning {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 12px;
+        }
+
+        /* Hero Problem Statement */
+        .hero-statement {
+            background: var(--bg-tertiary);
+            border-left: 3px solid var(--accent-beige-dark);
+            padding: 24px 28px;
+            margin-top: 36px;
+            font-size: 17px;
+            color: var(--text-tertiary);
+        }
+
+        .hero-statement strong {
+            color: var(--text-primary);
         }
 
         /* ========================================
-           PROBLEM AMPLIFICATION
-           Show them their broken reality
-           EDIT: Painful operational details
+           PROBLEM SECTIONS
            ======================================== */
         .problem-list {
             margin-top: 32px;
         }
 
         .problem-item {
-            background: #0f0f0f;
-            border-left: 2px solid #2f2f2f;
+            background: var(--bg-secondary);
+            border-left: 2px solid var(--border-medium);
             padding: 24px 28px;
             margin-bottom: 16px;
         }
 
         .problem-item h3 {
-            color: #e4e4e4;
+            color: var(--text-primary);
             font-size: 19px;
             margin-bottom: 10px;
         }
 
         .problem-item p {
             margin-bottom: 0;
-            color: #a4a4a4;
+            color: var(--text-tertiary);
             font-size: 17px;
         }
 
         /* ========================================
+           FAILURE MODE SECTION - NEW
+           ======================================== */
+        .failure-mode-section {
+            background: var(--bg-secondary);
+        }
+
+        .failure-grid {
+            margin-top: 32px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .failure-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-medium);
+            padding: 28px;
+            border-left: 3px solid var(--accent-beige-dark);
+        }
+
+        .failure-card h3 {
+            color: var(--accent-beige);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .failure-card .failure-scenario {
+            color: var(--text-secondary);
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .failure-card .failure-impact {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* ========================================
            COST CALCULATION
-           Make the math obvious
-           EDIT: Dollar values and scenarios
            ======================================== */
         .cost-box {
-            background: #141414;
-            border: 1px solid #242424;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-medium);
             padding: 32px;
             margin-top: 32px;
         }
@@ -163,7 +271,7 @@
             display: flex;
             justify-content: space-between;
             padding: 16px 0;
-            border-bottom: 1px solid #1f1f1f;
+            border-bottom: 1px solid var(--border-subtle);
             font-size: 17px;
         }
 
@@ -171,52 +279,49 @@
             border-bottom: none;
             padding-top: 20px;
             margin-top: 8px;
-            border-top: 2px solid #2f2f2f;
+            border-top: 2px solid var(--accent-beige-dark);
         }
 
         .cost-line strong {
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         .cost-line .cost-value {
-            color: #ffffff;
+            color: var(--accent-beige);
             font-weight: 600;
         }
 
         /* ========================================
            SOLUTION POSITIONING
-           What this actually is
-           EDIT: Core positioning statement
            ======================================== */
         .positioning-statement {
-            background: #0f0f0f;
-            border: 1px solid #242424;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-medium);
+            border-left: 3px solid var(--accent-beige);
             padding: 36px;
             margin-top: 32px;
             font-size: 19px;
             line-height: 1.6;
-            color: #c4c4c4;
+            color: var(--text-secondary);
         }
 
         .positioning-statement strong {
-            color: #ffffff;
+            color: var(--text-primary);
         }
 
         /* ========================================
            DELIVERABLES
-           Exact scope of what they receive
-           EDIT: Specific items included
            ======================================== */
         .deliverable-grid {
             margin-top: 32px;
             display: grid;
             gap: 1px;
-            background: #1f1f1f;
-            border: 1px solid #1f1f1f;
+            background: var(--border-subtle);
+            border: 1px solid var(--border-subtle);
         }
 
         .deliverable-item {
-            background: #0d0d0d;
+            background: var(--bg-primary);
             padding: 28px;
         }
 
@@ -228,30 +333,28 @@
         .deliverable-item p {
             margin-bottom: 0;
             font-size: 16px;
-            color: #a4a4a4;
+            color: var(--text-tertiary);
         }
 
         .scope-clarification {
             margin-top: 28px;
             padding: 24px;
-            background: #141414;
-            border-left: 3px solid #404040;
+            background: var(--bg-tertiary);
+            border-left: 3px solid var(--border-medium);
             font-size: 16px;
-            color: #949494;
+            color: var(--text-muted);
         }
 
         /* ========================================
            SYSTEM BREAKDOWN
-           Technical components explained
-           EDIT: Module descriptions
            ======================================== */
         .module-list {
             margin-top: 32px;
         }
 
         .module-card {
-            background: #0f0f0f;
-            border: 1px solid #1f1f1f;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
             padding: 32px;
             margin-bottom: 20px;
         }
@@ -261,25 +364,23 @@
         }
 
         .module-card .module-purpose {
-            color: #b4b4b4;
+            color: var(--text-tertiary);
             margin-bottom: 14px;
             font-size: 17px;
         }
 
         .module-card .module-why {
-            color: #949494;
+            color: var(--text-muted);
             margin-bottom: 0;
             font-size: 16px;
             font-style: italic;
         }
 
         /* ========================================
-           PROOF / CREDIBILITY
-           Real operational context
-           EDIT: Your actual experience/metrics
+           PROOF SECTION
            ======================================== */
         .proof-section {
-            background: #0a0a0a;
+            background: var(--bg-secondary);
         }
 
         .proof-content {
@@ -289,7 +390,7 @@
         .proof-content p {
             font-size: 18px;
             line-height: 1.7;
-            color: #b4b4b4;
+            color: var(--text-tertiary);
         }
 
         .metric-row {
@@ -301,29 +402,27 @@
 
         .metric-box {
             text-align: center;
-            padding: 24px;
-            background: #0f0f0f;
-            border: 1px solid #1f1f1f;
+            padding: 28px 24px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-medium);
         }
 
         .metric-number {
             font-size: 36px;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--accent-beige);
             margin-bottom: 8px;
         }
 
         .metric-label {
-            font-size: 14px;
-            color: #848484;
+            font-size: 13px;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
         }
 
         /* ========================================
            QUALIFICATION
-           Who should and shouldn't buy
-           EDIT: Specific criteria
            ======================================== */
         .qual-grid {
             display: grid;
@@ -333,20 +432,22 @@
         }
 
         .qual-column h3 {
-            font-size: 16px;
+            font-size: 15px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
             margin-bottom: 20px;
             padding-bottom: 12px;
-            border-bottom: 2px solid #1f1f1f;
+            border-bottom: 2px solid var(--border-subtle);
         }
 
         .qual-column.fit h3 {
-            color: #4ade80;
+            color: var(--accent-beige);
+            border-bottom-color: var(--accent-beige-dark);
         }
 
         .qual-column.not-fit h3 {
             color: #ef4444;
+            border-bottom-color: #7f1d1d;
         }
 
         .qual-column ul {
@@ -355,8 +456,8 @@
 
         .qual-column li {
             padding: 14px 0;
-            color: #b4b4b4;
-            border-bottom: 1px solid #1a1a1a;
+            color: var(--text-tertiary);
+            border-bottom: 1px solid var(--border-subtle);
             font-size: 17px;
         }
 
@@ -366,13 +467,11 @@
 
         /* ========================================
            GUARANTEE
-           Risk reversal with conditions
-           EDIT: Your specific guarantee terms
            ======================================== */
         .guarantee-container {
             margin-top: 32px;
-            background: #0f0f0f;
-            border: 1px solid #242424;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-medium);
             padding: 36px;
         }
 
@@ -388,26 +487,24 @@
         .guarantee-exclusions {
             margin-top: 24px;
             padding-top: 24px;
-            border-top: 1px solid #1f1f1f;
+            border-top: 1px solid var(--border-subtle);
         }
 
         .guarantee-exclusions h4 {
             font-size: 16px;
-            color: #c4c4c4;
+            color: var(--text-secondary);
             margin-bottom: 12px;
             font-weight: 600;
         }
 
         .guarantee-exclusions p {
             font-size: 16px;
-            color: #949494;
+            color: var(--text-muted);
             margin-bottom: 0;
         }
 
         /* ========================================
            CTA SECTION
-           Final conversion point
-           EDIT: Button text and supporting copy
            ======================================== */
         .cta-section {
             padding: 110px 0;
@@ -425,54 +522,84 @@
 
         .price-line {
             font-size: 19px;
-            color: #b4b4b4;
+            color: var(--text-tertiary);
             margin-bottom: 32px;
         }
 
         .price-line strong {
             font-size: 32px;
-            color: #ffffff;
+            color: var(--accent-beige);
             font-weight: 700;
         }
 
         .cta-button {
             display: inline-block;
-            background: #ffffff;
-            color: #0a0a0a;
+            background: var(--accent-beige);
+            color: var(--bg-primary);
             padding: 20px 56px;
             font-size: 19px;
             font-weight: 600;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.2s ease;
             letter-spacing: -0.01em;
         }
 
         .cta-button:hover {
-            background: #e8e8e8;
+            background: var(--accent-beige-dark);
             transform: translateY(-1px);
         }
 
         .cta-details {
             margin-top: 28px;
             font-size: 15px;
-            color: #747474;
+            color: var(--text-muted);
         }
 
         /* ========================================
-           FOOTER
+           FOOTER - WHATSAPP CONTACT
            ======================================== */
         footer {
             padding: 70px 0;
             text-align: center;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid var(--border-subtle);
         }
 
-        footer p {
-            color: #5a5a5a;
-            font-size: 15px;
-            margin: 0;
+        .footer-contact {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .footer-contact h3 {
+            font-size: 20px;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: var(--accent-beige);
+            color: var(--bg-primary);
+            padding: 16px 40px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .whatsapp-button:hover {
+            background: var(--accent-beige-dark);
+            transform: translateY(-1px);
         }
 
         /* ========================================
@@ -507,6 +634,17 @@
                 font-size: 19px;
             }
 
+            .flow-sequence {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 4px 0;
+            }
+
             .qual-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
@@ -530,427 +668,259 @@
                 width: 100%;
                 padding: 20px 32px;
             }
+
+            .whatsapp-button {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- ========================================
-         HERO SECTION
-         EDIT: Primary pain headline + subhead
+         HERO SECTION - TECHNICAL HOOK
+         EDIT: Core system failure awareness
          ======================================== -->
     <section class="hero">
         <div class="container">
-            <h1>Your Team Responds to Leads in Hours. Your Competitors Respond in Minutes.</h1>
+            <h1>Your Lead Form Fires an Event. After That, You Have No Guarantees.</h1>
             
             <p class="subhead">
-                Every lead that sits in your inbox for more than 5 minutes is 10x less likely to convert. Manual lead handling is why qualified prospects ghost you after they submit a form.
+                Most businesses assume their lead workflow is deterministic. It's not. Between form submission and CRM entry, leads pass through webhooks, API calls, routing logic, and integrations—none of which you monitor.
             </p>
 
-            <div class="hero-stat">
-                <strong>Here's what's actually happening:</strong> A lead fills out your form at 2:47 PM. Your team sees it at 4:15 PM. They respond at 9:30 AM the next day. The prospect already talked to two competitors and picked one. You never even knew you lost.
+            <!-- Technical System Flow Visualization -->
+            <div class="system-flow">
+                <div class="flow-title">Typical Lead Workflow (Unmonitored)</div>
+                <div class="flow-sequence">
+                    <div class="flow-node">Form Submit</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node">Webhook</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node failure">Router Logic</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node failure">CRM Sync</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-node failure">Notification</div>
+                </div>
+                <div class="flow-gap">↑ No confirmation. No logging. No fallback.</div>
+                <p class="flow-warning">When any step fails, you don't know until someone notices leads stopped coming in.</p>
+            </div>
+
+            <div class="hero-statement">
+                <strong>The operational reality:</strong> A lead submits your form. The webhook fires but your server times out. The lead never reaches your CRM. No alert triggers. Your team never knows. Three days later, you realize 40 leads are missing. How do you recover them? You can't. They're gone.
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         PROBLEM AMPLIFICATION
-         EDIT: Specific operational failures
+         FAILURE MODE SECTION - NEW
+         EDIT: Specific system failure scenarios
+         ======================================== -->
+    <section class="section failure-mode-section">
+        <div class="container">
+            <h2>Where Most Lead Systems Break (Silently)</h2>
+            
+            <p class="subhead">
+                These failures happen daily in businesses processing hundreds of leads. Most operators never see them until revenue impact becomes obvious.
+            </p>
+
+            <div class="failure-grid">
+                <!-- FAILURE 1 - Edit scenario -->
+                <div class="failure-card">
+                    <h3>Webhook Delivery Failure</h3>
+                    <p class="failure-scenario">Your form provider sends a webhook. Your endpoint is down for 90 seconds during a deploy. The webhook times out and is never retried. The lead vanishes.</p>
+                    <p class="failure-impact">Impact: Permanent data loss. No recovery mechanism. No visibility into how many leads were affected.</p>
+                </div>
+
+                <!-- FAILURE 2 - Edit scenario -->
+                <div class="failure-card">
+                    <h3>API Rate Limit Hit</h3>
+                    <p class="failure-scenario">Your CRM has a rate limit. During a traffic spike, new leads exceed the limit. Writes fail silently. Leads stack up in a buffer with no monitoring.</p>
+                    <p class="failure-impact">Impact: Data loss or hours of delay. You don't discover this until someone manually checks the CRM.</p>
+                </div>
+
+                <!-- FAILURE 3 - Edit scenario -->
+                <div class="failure-card">
+                    <h3>Data Validation Rejection</h3>
+                    <p class="failure-scenario">A lead submits a form with an international phone format. Your CRM rejects it due to validation rules. No error is logged. The lead is dropped.</p>
+                    <p class="failure-impact">Impact: Qualified prospects disappear before your team sees them. You can't audit what was rejected or why.</p>
+                </div>
+
+                <!-- FAILURE 4 - Edit scenario -->
+                <div class="failure-card">
+                    <h3>Integration Disconnect</h3>
+                    <p class="failure-scenario">Your Zapier connection expires due to auth token refresh. Leads stop flowing. No alert fires. You notice three days later when a salesperson asks why leads dried up.</p>
+                    <p class="failure-impact">Impact: Complete lead flow stoppage. Unknown number of lost prospects. No historical record of the failure.</p>
+                </div>
+
+                <!-- FAILURE 5 - Edit scenario -->
+                <div class="failure-card">
+                    <h3>Race Condition in Routing</h3>
+                    <p class="failure-scenario">Two leads submit forms within 2 seconds. Your routing logic isn't queued. Both get assigned to the same rep, or neither gets assigned at all.</p>
+                    <p class="failure-impact">Impact: Duplicate work or missed follow-ups. No audit trail shows what assignment logic executed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         COST OF BLINDNESS
+         EDIT: Visibility and control costs
          ======================================== -->
     <section class="section">
         <div class="container">
-            <h2>Most Businesses Don't Have a Lead Problem. They Have a Response Problem.</h2>
+            <h2>The Cost Isn't Just Lost Leads. It's Lost Certainty.</h2>
             
             <p class="subhead">
-                You're spending money to generate leads. But after the form submit, everything breaks down.
+                When you can't see your lead workflow, you can't trust your metrics. You're making decisions based on incomplete data.
             </p>
 
             <div class="problem-list">
-                <!-- PROBLEM 1 - Edit as needed -->
+                <!-- BLINDNESS 1 -->
                 <div class="problem-item">
-                    <h3>Leads land in the wrong place</h3>
-                    <p>Form submissions go to a shared inbox. No one owns it. High-priority leads sit next to newsletter signups and spam. By the time someone notices, 6 hours have passed.</p>
+                    <h3>You cannot audit what you cannot log</h3>
+                    <p>Without event logging, you have no record of what happened to each lead. When a prospect says they submitted your form but never heard back, you have no way to verify what occurred. You just apologize.</p>
                 </div>
 
-                <!-- PROBLEM 2 - Edit as needed -->
+                <!-- BLINDNESS 2 -->
                 <div class="problem-item">
-                    <h3>No one knows who should respond</h3>
-                    <p>Sales assumes marketing will qualify. Marketing assumes sales will follow up. The lead gets a generic auto-reply and nothing else. No human ever makes contact.</p>
+                    <h3>You cannot optimize what you cannot trace</h3>
+                    <p>Your conversion metrics are based on CRM data. But if 15% of leads never make it to the CRM, your conversion rates are fiction. You're optimizing for a reality that doesn't exist.</p>
                 </div>
 
-                <!-- PROBLEM 3 - Edit as needed -->
+                <!-- BLINDNESS 3 -->
                 <div class="problem-item">
-                    <h3>Manual qualification wastes operator time</h3>
-                    <p>Someone on your team spends 15 minutes per lead checking if they're qualified—reading the form, googling the company, deciding priority. That's $200/day in salary cost just to triage.</p>
+                    <h3>You cannot fix what you don't see break</h3>
+                    <p>A broken webhook doesn't send alerts. A failed CRM sync doesn't notify anyone. Integration errors fail silently. By the time you notice something's wrong, days of leads are gone.</p>
                 </div>
 
-                <!-- PROBLEM 4 - Edit as needed -->
+                <!-- BLINDNESS 4 -->
                 <div class="problem-item">
-                    <h3>Your CRM is always out of sync</h3>
-                    <p>Leads don't make it into the CRM for days. When they do, half the data is missing or wrong. You can't report on what you can't see. You're flying blind.</p>
-                </div>
-
-                <!-- PROBLEM 5 - Edit as needed -->
-                <div class="problem-item">
-                    <h3>You have no visibility into what's breaking</h3>
-                    <p>A form stops working. A webhook fails. An integration breaks. You don't find out until someone notices leads stopped coming in—3 days later. How many did you lose?</p>
+                    <h3>You cannot forecast with unreliable inputs</h3>
+                    <p>Your revenue projections depend on lead volume accuracy. If your lead count is systematically undercounted due to silent failures, your entire forecast model is wrong. You're steering blind.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         COST OF INACTION
-         EDIT: Math that justifies the price
+         COST CALCULATION
+         EDIT: Real dollar impact
          ======================================== -->
     <section class="section">
         <div class="container">
-            <h2>The Real Cost of Manual Lead Handling</h2>
+            <h2>The Real Cost of Running Blind</h2>
             
             <p class="subhead">
-                Let's be conservative. You're generating 100 leads per month. Here's what you're actually losing:
+                Conservative estimate for a business generating 100 leads per month. Actual cost scales with volume.
             </p>
 
             <div class="cost-box">
-                <!-- COST LINE 1 - Edit dollar values -->
+                <!-- COST LINE 1 -->
                 <div class="cost-line">
-                    <span><strong>Response delay:</strong> 20% of qualified leads go cold before contact</span>
-                    <span class="cost-value">$8,400/mo</span>
+                    <span><strong>Silent failures:</strong> 10% of leads never reach CRM</span>
+                    <span class="cost-value">$4,200/mo</span>
                 </div>
 
-                <!-- COST LINE 2 - Edit dollar values -->
+                <!-- COST LINE 2 -->
                 <div class="cost-line">
-                    <span><strong>Manual triage:</strong> 30 min/day @ $60/hr salary cost</span>
+                    <span><strong>Response delay:</strong> Manual triage adds 4+ hours per lead</span>
+                    <span class="cost-value">$5,600/mo</span>
+                </div>
+
+                <!-- COST LINE 3 -->
+                <div class="cost-line">
+                    <span><strong>Manual qualification:</strong> 30 min/day @ $60/hr operator cost</span>
                     <span class="cost-value">$660/mo</span>
                 </div>
 
-                <!-- COST LINE 3 - Edit dollar values -->
+                <!-- COST LINE 4 -->
                 <div class="cost-line">
-                    <span><strong>Missed leads:</strong> 5% slip through due to human error</span>
-                    <span class="cost-value">$2,100/mo</span>
-                </div>
-
-                <!-- COST LINE 4 - Edit dollar values -->
-                <div class="cost-line">
-                    <span><strong>Lost visibility:</strong> Can't optimize what you can't measure</span>
+                    <span><strong>Metric unreliability:</strong> Wrong data = wrong decisions</span>
                     <span class="cost-value">Unknown</span>
                 </div>
 
-                <!-- TOTAL LINE - Edit total -->
+                <!-- TOTAL -->
                 <div class="cost-line">
-                    <span><strong>Conservative monthly cost:</strong></span>
-                    <span class="cost-value">$11,160</span>
+                    <span><strong>Measurable monthly cost:</strong></span>
+                    <span class="cost-value">$10,460+</span>
                 </div>
             </div>
 
-            <p style="margin-top: 28px; font-size: 17px; color: #949494;">
-                This system costs $1,497 one-time. If it saves you <strong style="color: #c4c4c4;">one missed deal</strong>, it's paid for itself. If it cuts response time from hours to seconds, it pays for itself every month.
+            <p style="margin-top: 28px; font-size: 17px; color: var(--text-muted);">
+                This infrastructure costs <strong style="color: var(--text-secondary);">$1,497 one-time</strong>. It pays for itself if it prevents <strong style="color: var(--text-secondary);">one week of silent failures</strong>. After that, it's pure operational gain.
             </p>
         </div>
     </section>
 
     <!-- ========================================
          SOLUTION POSITIONING
-         EDIT: What this actually is
+         EDIT: Infrastructure positioning
          ======================================== -->
     <section class="section">
         <div class="container">
-            <h2>Lead Automation Infrastructure</h2>
+            <h2>A Monitored, Auditable, Deterministic Lead Pipeline</h2>
             
             <p class="subhead">
-                This is not software. This is not a course. This is not consulting.
+                This is not software. This is not a tool. This is production-grade infrastructure.
             </p>
 
             <div class="positioning-statement">
-                <p>This is a <strong>pre-built, production-ready automation system</strong> that handles every step of your lead workflow from first contact to CRM entry.</p>
+                <p>What you're purchasing is a <strong>complete, event-driven lead automation system</strong> with built-in monitoring, error handling, logging, and fallback paths.</p>
                 
-                <p>It's built in Make.com (formerly Integromat). Every workflow is already configured. Every integration point is already mapped. The logic is already tested.</p>
+                <p>It's built in Make.com (formerly Integromat). Every workflow is pre-configured. Every integration point is mapped. The routing logic is tested. The error handlers are in place.</p>
                 
-                <p><strong>You're not buying access to tools. You're buying the system itself—ready to deploy.</strong></p>
+                <p><strong>This is not a template you customize. This is the actual infrastructure—ready to deploy.</strong></p>
                 
-                <p style="margin-bottom: 0;">It's the same infrastructure we built while operating businesses processing hundreds of inbound leads per month. It's what runs when you can't afford to miss one.</p>
+                <p style="margin-bottom: 0;">It's the same system we built while operating businesses that couldn't afford to lose qualified leads. Where one missed lead costs more than this entire infrastructure. Where certainty matters more than speed.</p>
             </div>
         </div>
     </section>
 
     <!-- ========================================
          DELIVERABLES
-         EDIT: Exact scope items
+         EDIT: Exact scope
          ======================================== -->
     <section class="section">
         <div class="container">
             <h2>What You Receive</h2>
             
             <p class="subhead">
-                You get the complete system. Here's exactly what's included:
+                The complete system. Here's exactly what's included:
             </p>
 
             <div class="deliverable-grid">
-                <!-- DELIVERABLE 1 - Edit as needed -->
+                <!-- DELIVERABLE 1 -->
                 <div class="deliverable-item">
-                    <h3>Complete Make.com Automation Workflows</h3>
-                    <p>Every scenario pre-built: lead capture, qualification routing, CRM sync, notification triggers, error handling. Import and configure to your tools.</p>
+                    <h3>Event-Driven Automation Workflows</h3>
+                    <p>Pre-built Make.com scenarios: lead capture with error handling, qualification routing with fallbacks, CRM sync with retry logic, notification triggers with monitoring. Import and configure.</p>
                 </div>
 
-                <!-- DELIVERABLE 2 - Edit as needed -->
+                <!-- DELIVERABLE 2 -->
                 <div class="deliverable-item">
-                    <h3>Integration Templates for Your Stack</h3>
-                    <p>Pre-configured connections for major CRMs (HubSpot, Salesforce, Pipedrive), email tools, Slack, calendars, webhooks. Plug in your credentials.</p>
+                    <h3>Integration Layer for Your Stack</h3>
+                    <p>Pre-configured connections for major CRMs (HubSpot, Salesforce, Pipedrive), communication tools (Slack, email, SMS), webhooks, and APIs. Add your credentials.</p>
                 </div>
 
-                <!-- DELIVERABLE 3 - Edit as needed -->
+                <!-- DELIVERABLE 3 -->
                 <div class="deliverable-item">
-                    <h3>Technical Documentation</h3>
-                    <p>Setup guides, workflow diagrams, configuration checklists, troubleshooting protocols. Written for operators, not developers.</p>
+                    <h3>Monitoring & Logging Infrastructure</h3>
+                    <p>Built-in event logging, error detection, alert triggers, and audit trails. You see every lead, every action, every failure—in real time.</p>
                 </div>
 
-                <!-- DELIVERABLE 4 - Edit as needed -->
+                <!-- DELIVERABLE 4 -->
                 <div class="deliverable-item">
-                    <h3>Qualification Logic Framework</h3>
-                    <p>Lead scoring models, routing rules, priority classification. Customize the criteria; the structure is already built.</p>
+                    <h3>Operational Documentation</h3>
+                    <p>Setup guides, system architecture diagrams, configuration checklists, troubleshooting protocols. Written for operators, not developers.</p>
                 </div>
 
-                <!-- DELIVERABLE 5 - Edit as needed -->
+                <!-- DELIVERABLE 5 -->
                 <div class="deliverable-item">
-                    <h3>30-Day Implementation Support</h3>
-                    <p>Email support for technical questions during deployment. Not hand-holding—technical answers for operators who implement.</p>
+                    <h3>30-Day Technical Support</h3>
+                    <p>Email support for implementation questions. Not hand-holding—technical answers for operators deploying production systems.</p>
                 </div>
             </div>
 
             <div class="scope-clarification">
-                <strong style="color: #c4c4c4;">What you handle:</strong> Connecting the system to your specific tools (your CRM, your Slack workspace, your email). The workflows are built. You (or your technical person) make the final connections. Typical deployment: 2–4 hours depending on your stack complexity.
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SYSTEM BREAKDOWN
-         EDIT: Module descriptions and purpose
-         ======================================== -->
-    <section class="section">
-        <div class="container">
-            <h2>How the System Works</h2>
-            
-            <p class="subhead">
-                Six core modules handle the complete lead lifecycle. Each one solves a specific operational failure.
-            </p>
-
-            <div class="module-list">
-                <!-- MODULE 1 - Edit as needed -->
-                <div class="module-card">
-                    <h3>1. Lead Capture Engine</h3>
-                    <p class="module-purpose">Ingests leads from any source: forms, APIs, webhooks, email parsing. Standardizes data format regardless of where it comes from.</p>
-                    <p class="module-why">Why it exists: You're using multiple lead sources. Each one formats data differently. This normalizes everything so the rest of the system works consistently.</p>
-                </div>
-
-                <!-- MODULE 2 - Edit as needed -->
-                <div class="module-card">
-                    <h3>2. Qualification & Scoring Router</h3>
-                    <p class="module-purpose">Applies your qualification criteria automatically. Scores leads, assigns priority levels, routes to the right person or team.</p>
-                    <p class="module-why">Why it exists: Manual qualification burns time and introduces inconsistency. This applies the same logic to every lead, instantly, without human judgment calls.</p>
-                </div>
-
-                <!-- MODULE 3 - Edit as needed -->
-                <div class="module-card">
-                    <h3>3. CRM Integration Layer</h3>
-                    <p class="module-purpose">Syncs leads into your CRM in real-time. Creates records, updates fields, maintains data integrity across systems.</p>
-                    <p class="module-why">Why it exists: Leads that don't make it into your CRM don't exist. This ensures every lead is tracked from minute one, with full context.</p>
-                </div>
-
-                <!-- MODULE 4 - Edit as needed -->
-                <div class="module-card">
-                    <h3>4. Intelligent Notification System</h3>
-                    <p class="module-purpose">Sends alerts to the right people via Slack, SMS, or email based on lead priority and routing rules. High-priority leads trigger immediate notifications.</p>
-                    <p class="module-why">Why it exists: Shared inboxes don't work. This ensures the right person knows about the right lead within seconds of submission.</p>
-                </div>
-
-                <!-- MODULE 5 - Edit as needed -->
-                <div class="module-card">
-                    <h3>5. Automated Response & Scheduling</h3>
-                    <p class="module-purpose">Sends immediate acknowledgment emails, offers calendar booking links, triggers follow-up sequences. All within 60 seconds of form submission.</p>
-                    <p class="module-why">Why it exists: Speed matters. An instant, personalized response keeps leads warm while your team prepares actual outreach. This buys you time without looking slow.</p>
-                </div>
-
-                <!-- MODULE 6 - Edit as needed -->
-                <div class="module-card">
-                    <h3>6. Monitoring & Error Detection</h3>
-                    <p class="module-purpose">Tracks every lead through the system. Logs all actions. Flags failures immediately. Sends alerts if something breaks.</p>
-                    <p class="module-why">Why it exists: You need to know when the system fails before leads are lost. This gives you full visibility into what's working and what's not.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         PROOF & CREDIBILITY
-         EDIT: Real operational context
-         ======================================== -->
-    <section class="section proof-section">
-        <div class="container">
-            <h2>Why This System Works</h2>
-            
-            <div class="proof-content">
-                <p>This infrastructure wasn't built in theory. It was built while operating businesses that process <strong>300+ inbound leads per month</strong> in competitive markets where speed determines who wins the deal.</p>
-                
-                <p>Every workflow in this system exists because we hit a real operational problem: leads sitting in inboxes, qualification taking too long, CRM data going stale, high-priority prospects getting the same treatment as tire-kickers.</p>
-                
-                <p><strong>This is what's running in production right now.</strong> Not an experiment. Not a side project. The actual system that handles real lead volume in environments where missing one qualified lead costs more than this entire infrastructure.</p>
-            </div>
-
-            <!-- METRICS - Edit with your real data -->
-            <div class="metric-row">
-                <div class="metric-box">
-                    <div class="metric-number">&lt;60s</div>
-                    <div class="metric-label">Response Time</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">100%</div>
-                    <div class="metric-label">Lead Capture Rate</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">0</div>
-                    <div class="metric-label">Manual Steps</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         QUALIFICATION
-         EDIT: Specific fit criteria
-         ======================================== -->
-    <section class="section">
-        <div class="container">
-            <h2>Who This Is For (and Who It's Not For)</h2>
-            
-            <p class="subhead">
-                This system is built for operators running real businesses with real lead volume. It's not for everyone.
-            </p>
-
-            <div class="qual-grid">
-                <!-- GOOD FIT - Edit criteria -->
-                <div class="qual-column fit">
-                    <h3>You're a Good Fit If:</h3>
-                    <ul>
-                        <li>You generate at least 50 leads per month</li>
-                        <li>You're using (or planning to use) a CRM</li>
-                        <li>Response time directly impacts your close rate</li>
-                        <li>You have someone technical who can deploy</li>
-                        <li>You've lost deals because leads went cold</li>
-                        <li>You understand infrastructure is an investment</li>
-                        <li>Manual lead handling is costing you money</li>
-                    </ul>
-                </div>
-
-                <!-- NOT A FIT - Edit criteria -->
-                <div class="qual-column not-fit">
-                    <h3>You're Not a Fit If:</h3>
-                    <ul>
-                        <li>You get fewer than 20 leads per month</li>
-                        <li>You don't have a lead qualification process</li>
-                        <li>You want someone to run this for you</li>
-                        <li>You need extensive training or hand-holding</li>
-                        <li>You're experimenting with lead gen</li>
-                        <li>You expect plug-and-play with zero setup</li>
-                        <li>You're not ready to deploy infrastructure</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         GUARANTEE
-         EDIT: Your specific terms
-         ======================================== -->
-    <section class="section">
-        <div class="container">
-            <h2>30-Day Operational Guarantee</h2>
-            
-            <p class="subhead">
-                This system works. If you deploy it properly and it doesn't handle your lead flow as described, you get your money back.
-            </p>
-
-            <div class="guarantee-container">
-                <h3>How the Guarantee Works</h3>
-                
-                <p>Deploy the system according to the documentation. Run real leads through it. If the infrastructure doesn't perform as described—if it fails to capture leads, route them correctly, or sync to your CRM—request a refund within 30 days.</p>
-                
-                <p><strong>No questions. No friction.</strong> This guarantee exists because the system works when implemented correctly.</p>
-
-                <div class="guarantee-exclusions">
-                    <h4>What's Not Covered:</h4>
-                    <p>This isn't a "try it and see" policy. Refunds aren't available if you don't deploy the system, don't have leads to run through it, or simply decide you don't want to use automation. This protects serious buyers from people who aren't committed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         FINAL CTA
-         EDIT: Button text and price
-         ======================================== -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Deploy the Lead Automation Infrastructure</h2>
-            
-            <p class="subhead">
-                Stop losing deals to slow response times. Get the complete system, deploy it, and eliminate manual lead handling.
-            </p>
-
-            <div class="price-line">
-                <strong>$1,497</strong> — One-time payment
-            </div>
-
-            <!-- EDIT: Replace # with your checkout URL -->
-            <a href="#" class="cta-button" id="cta-primary">Get the System Now</a>
-
-            <p class="cta-details">
-                Secure checkout. Access delivered within 24 hours.<br>
-                30-day guarantee. No recurring fees.
-            </p>
-        </div>
-    </section>
-
-    <!-- ========================================
-         FOOTER
-         EDIT: Contact information
-         ======================================== -->
-    <footer>
-        <div class="container">
-            <p>Questions about fit or deployment? Email: support@yourdomain.com</p>
-        </div>
-    </footer>
-
-    <!-- ========================================
-         TRACKING & ANALYTICS
-         Add your tracking code here
-         ======================================== -->
-    <script>
-        // CTA click tracking
-        document.getElementById('cta-primary').addEventListener('click', function(e) {
-            // Add your analytics tracking here
-            // Example: gtag('event', 'cta_click', { 'value': 1497 });
-            console.log('CTA clicked - Purchase intent tracked');
-        });
-
-        // Scroll depth tracking (optional)
-        let scrollMarkers = [25, 50, 75, 100];
-        let triggeredMarkers = [];
-        
-        window.addEventListener('scroll', function() {
-            let scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            
-            scrollMarkers.forEach(marker => {
-                if (scrollPercent >= marker && !triggeredMarkers.includes(marker)) {
-                    triggeredMarkers.push(marker);
-                    // Add your analytics tracking here
-                    // Example: gtag('event', 'scroll_depth', { 'percent': marker });
-                    console.log('Scroll depth: ' + marker + '%');
-                }
-            });
-        });
-    </script>
-
-</body>
-</html>
+                <strong style="color: var(--text-secondary);">Implementation scope:</strong> You (or your technical operator) connect the system to your specific tools—your CRM instance, your Slack workspace, your
