@@ -123,6 +123,21 @@ body {
     font-size: 17px;
     color: var(--text-tertiary);
 }
+        /* ========================================
+   SCROLL ANIMATION HOOK
+   ======================================== */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
         /* ========================================
            TYPOGRAPHY
@@ -745,6 +760,30 @@ body {
     </style>
 </head>
 <body>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const faders = document.querySelectorAll(".fade-in-section");
+
+    const appearOptions = {
+        threshold: 0.2, // 20% visible triggers
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+});
+</script>
+
 
     <!-- ========================================
          HERO SECTION - TECHNICAL HOOK
@@ -1166,6 +1205,7 @@ body {
 
 </body>
 </html>
+
 
 
 
