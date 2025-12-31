@@ -9,14 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #f5f1eb;
-            --bg-secondary: #ebe6df;
-            --text-primary: #2b2520;
-            --text-secondary: #5a5248;
-            --accent-brown: #6b5d52;
-            --accent-dark: #3d352f;
-            --border-color: #d4cdc3;
-            --button-hover: #4a3f36;
+            --bg-primary: #DDBEA9;
+            --bg-secondary: #d4af94;
+            --bg-card: #f5ebe0;
+            --text-primary: #2b1810;
+            --text-secondary: #5a4738;
+            --accent-brown: #8b6f47;
+            --accent-dark: #3d2817;
+            --border-color: #c4a583;
+            --button-primary: #3d2817;
+            --button-hover: #2b1810;
         }
 
         * {
@@ -97,7 +99,7 @@
             padding: 18px 36px;
             font-size: 17px;
             font-weight: 600;
-            border-radius: 4px;
+            border-radius: 6px;
             text-decoration: none;
             display: inline-block;
             transition: all 0.2s ease;
@@ -106,12 +108,13 @@
         }
 
         .btn-primary {
-            background: var(--accent-dark);
-            color: var(--bg-primary);
+            background: var(--button-primary);
+            color: var(--bg-card);
         }
 
         .btn-primary:hover {
             background: var(--button-hover);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
@@ -122,7 +125,8 @@
 
         .btn-secondary:hover {
             border-color: var(--accent-dark);
-            background: rgba(61, 53, 47, 0.05);
+            background: rgba(61, 40, 23, 0.05);
+            transform: translateY(-1px);
         }
 
         section {
@@ -184,11 +188,11 @@
         }
 
         .failure-card {
-            background: var(--bg-primary);
+            background: var(--bg-card);
             padding: 32px;
-            border-radius: 4px;
+            border-radius: 6px;
             border-left: 4px solid var(--accent-brown);
-            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.08);
+            box-shadow: 0 2px 12px rgba(43, 24, 16, 0.08);
         }
 
         .failure-card h4 {
@@ -212,17 +216,17 @@
             max-width: 1100px;
             margin: 48px auto 0;
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 6px;
             padding: 24px;
-            background: white;
-            box-shadow: 0 4px 16px rgba(43, 37, 32, 0.1);
+            background: var(--bg-card);
+            box-shadow: 0 4px 20px rgba(43, 24, 16, 0.12);
         }
 
         .proof-container img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 2px;
+            border-radius: 4px;
         }
 
         .proof-caption {
@@ -233,12 +237,12 @@
         }
 
         .cost-box {
-            background: white;
+            background: var(--bg-card);
             padding: 48px;
-            border-radius: 4px;
+            border-radius: 6px;
             margin: 48px 0;
             border: 1px solid var(--border-color);
-            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.06);
+            box-shadow: 0 2px 12px rgba(43, 24, 16, 0.08);
         }
 
         .cost-box ul {
@@ -309,11 +313,11 @@
         }
 
         .deliverable-card {
-            background: white;
+            background: var(--bg-card);
             padding: 32px;
-            border-radius: 4px;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.06);
+            box-shadow: 0 2px 12px rgba(43, 24, 16, 0.08);
         }
 
         .deliverable-card h4 {
@@ -345,17 +349,17 @@
         }
 
         .architecture-layer {
-            background: white;
+            background: var(--bg-card);
             padding: 32px;
-            border-radius: 4px;
+            border-radius: 6px;
             border-left: 4px solid var(--accent-brown);
-            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.06);
+            box-shadow: 0 2px 12px rgba(43, 24, 16, 0.08);
         }
 
         .layer-number {
             display: inline-block;
             background: var(--accent-dark);
-            color: var(--bg-primary);
+            color: var(--bg-card);
             width: 36px;
             height: 36px;
             border-radius: 50%;
@@ -407,12 +411,12 @@
         }
 
         .guarantee-box {
-            background: white;
+            background: var(--bg-card);
             padding: 48px;
-            border-radius: 4px;
+            border-radius: 6px;
             border: 2px solid var(--accent-brown);
             margin: 48px 0;
-            box-shadow: 0 2px 12px rgba(43, 37, 32, 0.08);
+            box-shadow: 0 2px 16px rgba(43, 24, 16, 0.1);
         }
 
         .final-cta {
@@ -451,6 +455,23 @@
 
         footer a:hover {
             color: var(--accent-dark);
+        }
+
+        .solution-box {
+            background: var(--bg-card);
+            padding: 48px;
+            border-radius: 6px;
+            margin: 48px 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 12px rgba(43, 24, 16, 0.08);
+        }
+
+        .divider {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-dark);
+            margin: 32px 0;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -508,7 +529,7 @@
 
             <div class="cta-group">
                 <a href="#demo" class="btn btn-primary">Watch How Lead Failures Actually Happen (3-min Demo)</a>
-                <a href="#contact" class="btn btn-secondary">Ask Technical Questions on WhatsApp</a>
+                <a href="https://wa.me/213676127853" class="btn btn-secondary">Ask Technical Questions on WhatsApp</a>
             </div>
         </div>
     </section>
@@ -534,7 +555,7 @@
             <p>This isn't hypothetical. It's happening right now in businesses running on:</p>
             
             <ul class="feature-list">
-                <li>Zapier or Make.com integrations that silently time out</li>
+                <li>n8n or Zapier integrations that silently time out</li>
                 <li>CRM APIs that reject leads without logging why</li>
                 <li>OAuth tokens that expire mid-week</li>
                 <li>Rate limits that cause 30-minute delays during high traffic</li>
@@ -551,7 +572,7 @@
             <div class="failure-grid">
                 <div class="failure-card">
                     <h4>Webhook Timeout</h4>
-                    <p>Your form sends data to Make.com or Zapier, but the request takes 31 seconds. The webhook times out. The lead is gone.</p>
+                    <p>Your form sends data to n8n or Zapier, but the request takes 31 seconds. The webhook times out. The lead is gone.</p>
                     <p class="impact">Business impact: Lost sale. No record. No retry.</p>
                 </div>
 
@@ -594,7 +615,7 @@
             </p>
 
             <div class="proof-container">
-                <img src="downloads/looom.png" alt="Lead infrastructure workflow screenshot">
+                <img src="C:\Users\DELL pro\Downloads\looom.png" alt="Lead infrastructure workflow screenshot">
                 <p class="proof-caption">
                     Every step captured, validated, and logged. Failures trigger immediate alerts. No lead disappears silently.
                 </p>
@@ -643,30 +664,38 @@
 
     <section class="alt-bg">
         <div class="container-narrow">
-            <h2>The Solution</h2>
-            <h3>What This Actually Is</h3>
+            <h2>What This Actually Is</h2>
 
-            <p>This is <span class="highlight">production-grade lead infrastructure</span> — the routing, monitoring, and audit layer that should exist between your forms and your CRM.</p>
+            <div class="solution-box">
+                <h3>What This Is NOT</h3>
+                
+                <ul class="not-list">
+                    <li><strong>Not a SaaS</strong> — No monthly fees, but you need your own n8n instance</li>
+                    <li><strong>Not a template</strong> — This requires configuration and setup on your end</li>
+                    <li><strong>Not a marketing funnel</strong> — This is technical infrastructure only, not landing pages or email sequences</li>
+                    <li><strong>Not plug-and-play</strong> — You'll need to connect your tools and configure integrations</li>
+                    <li><strong>Not custom development</strong> — We deliver a pre-built system, not bespoke software</li>
+                </ul>
 
-            <p>Built on <strong>Make.com</strong> (formerly Integromat), it's a complete event-driven system that:</p>
+                <p class="divider">But</p>
 
-            <ul class="feature-list">
-                <li><strong>Captures every lead</strong> at the ingress point</li>
-                <li><strong>Validates and routes</strong> based on your business rules</li>
-                <li><strong>Monitors every step</strong> and alerts you on failure</li>
-                <li><strong>Retries failed requests</strong> automatically</li>
-                <li><strong>Logs everything</strong> in an audit trail you can review months later</li>
-            </ul>
+                <p class="highlight" style="font-size: 20px; margin-bottom: 24px;">
+                    This is <strong>production-grade lead infrastructure</strong> — the routing, monitoring, and audit layer that should exist between your forms and your CRM.
+                </p>
 
-            <p>It runs 24/7. It handles traffic spikes. It escalates issues before they cost you money.</p>
+                <p>Built on <strong>n8n</strong>, it's a complete event-driven system that:</p>
 
-            <h3 style="margin-top: 64px;">What This Is NOT</h3>
+                <ul class="feature-list">
+                    <li><strong>Captures every lead</strong> at the ingress point with full validation</li>
+                    <li><strong>Routes intelligently</strong> based on your business rules and team structure</li>
+                    <li><strong>Monitors every step</strong> with real-time failure detection and immediate alerts</li>
+                    <li><strong>Retries failed requests</strong> automatically with exponential backoff logic</li>
+                    <li><strong>Logs everything</strong> in an audit trail you can review and query months later</li>
+                    <li><strong>Runs 24/7</strong> handling traffic spikes and escalating issues before they cost you money</li>
+                </ul>
 
-            <ul class="not-list">
-                <li><strong>Not a SaaS</strong> — No monthly fees, no dashboard login, no vendor lock-in</li>
-                <li><strong>Not a template</strong> — This is a configured, production-ready system</li>
-                <li><strong>Not a marketing funnel</strong> — This is technical infrastructure, not landing pages or email sequences</li>
-            </ul>
+                <p style="margin-top: 32px;">This is the reliability layer that makes everything else work. This is infrastructure you can trust.</p>
+            </div>
         </div>
     </section>
 
@@ -676,7 +705,7 @@
 
             <div class="deliverables-grid">
                 <div class="deliverable-card">
-                    <h4>Pre-Built Make.com Scenarios</h4>
+                    <h4>Pre-Built n8n Workflows</h4>
                     <ul>
                         <li>Lead ingress & validation</li>
                         <li>CRM routing for major platforms</li>
@@ -722,7 +751,7 @@
                 </div>
 
                 <div class="deliverable-card">
-                    <h4>30-Day Technical Support</h4>
+                    <h4>48-Hour Technical Support</h4>
                     <ul>
                         <li>WhatsApp or email access</li>
                         <li>Configuration help</li>
@@ -733,7 +762,7 @@
 
             <h3 style="margin-top: 64px;">What You Need to Provide</h3>
             <ul class="feature-list">
-                <li>Your Make.com account (Free or paid tier)</li>
+                <li>Your n8n instance (self-hosted or cloud)</li>
                 <li>API credentials for your CRM and communication tools</li>
                 <li>30 minutes to connect your existing tools to the system</li>
             </ul>
@@ -743,6 +772,7 @@
                 <li>Custom development — This is a configured system, not bespoke software</li>
                 <li>Form building — You bring your existing forms</li>
                 <li>CRM setup — Your CRM must already exist and be accessible via API</li>
+                <li>n8n hosting — You need your own n8n instance</li>
             </ul>
         </div>
     </section>
@@ -799,7 +829,7 @@
                     <h3>This Is a Good Fit If You:</h3>
                     <ul>
                         <li>Collect 50+ leads per month where each lead has real business value</li>
-                        <li>Use Make.com, Zapier, or custom webhooks to route leads to a CRM</li>
+                        <li>Use n8n, Zapier, or custom webhooks to route leads to a CRM</li>
                         <li>Have experienced "leads that never showed up" or delayed notifications</li>
                         <li>Need audit logs for compliance, debugging, or reporting</li>
                         <li>Want to eliminate silent failures without hiring a developer</li>
@@ -815,6 +845,7 @@
                         <li>Need a complete marketing funnel or landing pages</li>
                         <li>Expect this to work without any technical setup on your end</li>
                         <li>Want a plug-and-play SaaS dashboard</li>
+                        <li>Don't have access to an n8n instance</li>
                     </ul>
                 </div>
             </div>
@@ -823,57 +854,54 @@
 
     <section class="alt-bg">
         <div class="container-narrow">
-            <h2>30-Day Infrastructure Guarantee</h2>
-
             <div class="guarantee-box">
-                <p class="highlight" style="font-size: 19px; margin-bottom: 24px;">
-                    If the system doesn't perform as described — if leads fail silently, if monitoring doesn't alert you, or if the audit logs don't provide the visibility promised — we'll refund your payment in full within 30 days.
-                </p>
-
-                <h4>Conditions:</h4>
-                <ul class="feature-list">
-                    <li>You've connected your tools as documented</li>
-                    <li>You've reported technical issues within the 30-day support window</li>
-                    <li>The failure is due to system design, not external API downtime</li>
-                </ul>
-
-                <p style="margin-top: 32px;">This is infrastructure. It either works or it doesn't. If it doesn't, you don't pay.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="final-cta">
-        <div class="container-narrow">
-            <h2>Stop Losing Leads You'll Never Know About</h2>
-
-            <p style="font-size: 19px; margin: 32px auto 48px; max-width: 700px; color: var(--text-secondary);">
-                Every day you run without monitoring is another day a lead could fail silently. No alerts. No logs. No retry. Just gone.
+            <p class="highlight" style="font-size: 19px; margin-bottom: 24px;">
+                If the system doesn't perform as described — if leads fail silently, if monitoring doesn't alert you, or if the audit logs don't provide the visibility promised — we'll refund your payment in full within 48 hours.
             </p>
 
-            <div class="price">$1,497</div>
-            <p class="price-details">One-time payment. No monthly fees. No vendor dependency. Full control.</p>
+            <h4>Conditions:</h4>
+            <ul class="feature-list">
+                <li>You've connected your tools as documented</li>
+                <li>You've reported technical issues within the 48-hour support window</li>
+                <li>The failure is due to system design, not external API downtime</li>
+            </ul>
 
-            <p style="margin-bottom: 48px; font-size: 18px; color: var(--text-secondary);">
-                It either prevents silent failures and gives you complete visibility — or you get your money back.
-            </p>
-
-            <div class="cta-group">
-                <a href="#demo" class="btn btn-primary">Watch the System Catch a Failed Lead</a>
-                <a href="#contact" class="btn btn-secondary">Message Us on WhatsApp — Fast Technical Response</a>
-            </div>
-
-            <p style="margin-top: 64px; color: var(--text-secondary); font-size: 16px;">
-                Includes complete system, integrations, documentation, and 30 days of technical support.
-            </p>
+            <p style="margin-top: 32px;">This is infrastructure. It either works or it doesn't. If it doesn't, you don't pay.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>Questions? <a href="https://wa.me/15550000000">WhatsApp: +1 (555) 000-0000</a> | <a href="mailto:hello@example.com">Email: hello@example.com</a></p>
-            <p style="margin-top: 16px; font-size: 14px;">© 2025 Lead Infrastructure System. All rights reserved.</p>
+<section class="final-cta">
+    <div class="container-narrow">
+        <h2>Stop Losing Leads You'll Never Know About</h2>
+
+        <p style="font-size: 19px; margin: 32px auto 48px; max-width: 700px; color: var(--text-secondary);">
+            Every day you run without monitoring is another day a lead could fail silently. No alerts. No logs. No retry. Just gone.
+        </p>
+
+        <div class="price">$1,497</div>
+        <p class="price-details">One-time payment. No monthly fees. No vendor dependency. Full control.</p>
+
+        <p style="margin-bottom: 48px; font-size: 18px; color: var(--text-secondary);">
+            It either prevents silent failures and gives you complete visibility — or you get your money back.
+        </p>
+
+        <div class="cta-group">
+            <a href="#demo" class="btn btn-primary">Watch the System Catch a Failed Lead</a>
+            <a href="https://wa.me/213676127853" class="btn btn-secondary">Message Us on WhatsApp — Fast Technical Response</a>
         </div>
-    </footer>
 
+        <p style="margin-top: 64px; color: var(--text-secondary); font-size: 16px;">
+            Includes complete system, integrations, documentation, and 48 hours of technical support.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Questions? <a href="https://wa.me/213676127853">WhatsApp: +213 676 127 853</a> | <a href="mailto:hello@example.com">Email: hello@example.com</a></p>
+        <p style="margin-top: 16px; font-size: 14px;">© 2025 Lead Infrastructure System. All rights reserved.</p>
+    </div>
+</footer>
 </body>
-</html>
+</html></parameter>
