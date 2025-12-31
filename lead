@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lead Infrastructure System - Stop Losing Leads After Submit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #f5f1eb;
+            --bg-secondary: #ebe6df;
+            --text-primary: #2b2520;
+            --text-secondary: #5a5248;
+            --accent-brown: #6b5d52;
+            --accent-dark: #3d352f;
+            --border-color: #d4cdc3;
+            --button-hover: #4a3f36;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-section: #141414;
-            --text-primary: #f5f5f5;
-            --text-secondary: #a0a0a0;
-            --accent-blue: #0066ff;
-            --accent-green: #00a86b;
-            --error-red: #ff4444;
-            --border-subtle: #2a2a2a;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', system-ui, sans-serif;
-            background: var(--bg-dark);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.7;
             font-size: 18px;
@@ -33,78 +36,55 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
         .container-narrow {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
-        /* Header */
         header {
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border-subtle);
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-primary);
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+            text-transform: uppercase;
         }
 
-        /* Hero Section */
         .hero {
             padding: 120px 0 140px;
             text-align: center;
         }
 
         h1 {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
             margin-bottom: 32px;
+            color: var(--text-primary);
             max-width: 1000px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .subheadline {
-            font-size: 22px;
+            font-size: 21px;
             color: var(--text-secondary);
             line-height: 1.6;
             max-width: 800px;
-            margin: 0 auto 48px;
+            margin: 0 auto 64px;
+            font-weight: 400;
         }
 
-        .hero-bullets {
-            display: flex;
-            gap: 48px;
-            justify-content: center;
-            margin: 60px 0;
-            flex-wrap: wrap;
-        }
-
-        .hero-bullet {
-            flex: 0 1 280px;
-            text-align: left;
-        }
-
-        .hero-bullet strong {
-            display: block;
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .hero-bullet span {
-            color: var(--text-secondary);
-            font-size: 16px;
-        }
-
-        /* CTAs */
         .cta-group {
             display: flex;
             gap: 16px;
@@ -115,9 +95,9 @@
 
         .btn {
             padding: 18px 36px;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 4px;
             text-decoration: none;
             display: inline-block;
             transition: all 0.2s ease;
@@ -126,55 +106,55 @@
         }
 
         .btn-primary {
-            background: var(--accent-blue);
-            color: white;
+            background: var(--accent-dark);
+            color: var(--bg-primary);
         }
 
         .btn-primary:hover {
-            background: #0052cc;
-            transform: translateY(-2px);
+            background: var(--button-hover);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-subtle);
+            color: var(--accent-dark);
+            border: 2px solid var(--accent-brown);
         }
 
         .btn-secondary:hover {
-            border-color: var(--text-secondary);
-            transform: translateY(-2px);
+            border-color: var(--accent-dark);
+            background: rgba(61, 53, 47, 0.05);
         }
 
-        /* Sections */
         section {
-            padding: 120px 0;
-            border-top: 1px solid var(--border-subtle);
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
         }
 
-        section.dark-section {
-            background: var(--bg-section);
+        section.alt-bg {
+            background: var(--bg-secondary);
         }
 
         h2 {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
             margin-bottom: 32px;
-            line-height: 1.2;
+            line-height: 1.25;
+            color: var(--text-primary);
         }
 
         h3 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
             margin-bottom: 24px;
-            letter-spacing: -0.01em;
+            color: var(--text-primary);
         }
 
         h4 {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 12px;
+            color: var(--text-primary);
         }
 
         p {
@@ -182,12 +162,11 @@
             color: var(--text-secondary);
         }
 
-        .highlight-text {
+        .highlight {
             color: var(--text-primary);
             font-weight: 600;
         }
 
-        /* Problem Section */
         .problem-narrative {
             font-size: 20px;
             line-height: 1.8;
@@ -198,7 +177,6 @@
             margin-bottom: 16px;
         }
 
-        /* Failure Modes */
         .failure-grid {
             display: grid;
             gap: 32px;
@@ -206,10 +184,11 @@
         }
 
         .failure-card {
-            background: var(--bg-section);
+            background: var(--bg-primary);
             padding: 32px;
-            border-radius: 8px;
-            border-left: 3px solid var(--error-red);
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.08);
         }
 
         .failure-card h4 {
@@ -217,51 +196,80 @@
         }
 
         .failure-card .impact {
-            color: var(--error-red);
+            color: var(--accent-dark);
             font-weight: 600;
             margin-top: 16px;
+            font-size: 16px;
         }
 
-        /* Cost Section */
-        .cost-math {
-            background: var(--bg-section);
+        .proof-section {
+            text-align: center;
+            padding: 100px 0;
+            background: var(--bg-primary);
+        }
+
+        .proof-container {
+            max-width: 1100px;
+            margin: 48px auto 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 24px;
+            background: white;
+            box-shadow: 0 4px 16px rgba(43, 37, 32, 0.1);
+        }
+
+        .proof-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .proof-caption {
+            margin-top: 20px;
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .cost-box {
+            background: white;
             padding: 48px;
-            border-radius: 8px;
+            border-radius: 4px;
             margin: 48px 0;
-            border: 1px solid var(--border-subtle);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.06);
         }
 
-        .cost-math ul {
+        .cost-box ul {
             list-style: none;
             margin: 24px 0;
         }
 
-        .cost-math li {
+        .cost-box li {
             padding: 12px 0;
-            border-bottom: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-color);
             color: var(--text-secondary);
         }
 
-        .cost-math li:last-child {
+        .cost-box li:last-child {
             border-bottom: none;
         }
 
         .cost-highlight {
             font-size: 24px;
-            color: var(--accent-green);
+            color: var(--accent-dark);
             font-weight: 700;
             margin-top: 32px;
         }
 
-        /* Solution */
         .feature-list {
             list-style: none;
             margin: 32px 0;
         }
 
         .feature-list li {
-            padding: 16px 0;
-            padding-left: 32px;
+            padding: 12px 0 12px 28px;
             position: relative;
             color: var(--text-secondary);
         }
@@ -270,7 +278,7 @@
             content: "→";
             position: absolute;
             left: 0;
-            color: var(--accent-blue);
+            color: var(--accent-brown);
             font-weight: 700;
         }
 
@@ -280,8 +288,7 @@
         }
 
         .not-list li {
-            padding: 12px 0;
-            padding-left: 32px;
+            padding: 12px 0 12px 28px;
             position: relative;
             color: var(--text-secondary);
         }
@@ -290,28 +297,29 @@
             content: "✕";
             position: absolute;
             left: 0;
-            color: var(--error-red);
+            color: var(--accent-brown);
             font-weight: 700;
         }
 
-        /* Deliverables */
         .deliverables-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             margin: 48px 0;
         }
 
         .deliverable-card {
-            background: var(--bg-section);
+            background: white;
             padding: 32px;
-            border-radius: 8px;
-            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.06);
         }
 
         .deliverable-card h4 {
-            color: var(--accent-blue);
+            color: var(--accent-dark);
             margin-bottom: 16px;
+            font-size: 18px;
         }
 
         .deliverable-card ul {
@@ -326,11 +334,10 @@
 
         .deliverable-card li:before {
             content: "✓ ";
-            color: var(--accent-green);
+            color: var(--accent-brown);
             font-weight: 700;
         }
 
-        /* Architecture */
         .architecture-grid {
             display: grid;
             gap: 24px;
@@ -338,26 +345,27 @@
         }
 
         .architecture-layer {
-            background: var(--bg-section);
+            background: white;
             padding: 32px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-blue);
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(43, 37, 32, 0.06);
         }
 
         .layer-number {
             display: inline-block;
-            background: var(--accent-blue);
-            color: white;
-            width: 32px;
-            height: 32px;
+            background: var(--accent-dark);
+            color: var(--bg-primary);
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             text-align: center;
-            line-height: 32px;
+            line-height: 36px;
             font-weight: 700;
             margin-bottom: 16px;
+            font-size: 16px;
         }
 
-        /* Fit Section */
         .fit-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -366,11 +374,8 @@
         }
 
         .fit-column h3 {
-            color: var(--accent-green);
-        }
-
-        .not-fit-column h3 {
-            color: var(--error-red);
+            color: var(--accent-dark);
+            margin-bottom: 24px;
         }
 
         .fit-column ul,
@@ -380,8 +385,7 @@
 
         .fit-column li,
         .not-fit-column li {
-            padding: 12px 0;
-            padding-left: 32px;
+            padding: 12px 0 12px 28px;
             position: relative;
             color: var(--text-secondary);
         }
@@ -390,7 +394,7 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: var(--accent-green);
+            color: var(--accent-brown);
             font-weight: 700;
         }
 
@@ -398,30 +402,29 @@
             content: "✕";
             position: absolute;
             left: 0;
-            color: var(--error-red);
+            color: var(--accent-brown);
             font-weight: 700;
         }
 
-        /* Guarantee */
         .guarantee-box {
-            background: var(--bg-section);
+            background: white;
             padding: 48px;
-            border-radius: 8px;
-            border: 2px solid var(--accent-green);
+            border-radius: 4px;
+            border: 2px solid var(--accent-brown);
             margin: 48px 0;
+            box-shadow: 0 2px 12px rgba(43, 37, 32, 0.08);
         }
 
-        /* Final CTA */
         .final-cta {
             text-align: center;
-            padding: 140px 0;
-            background: var(--bg-section);
+            padding: 120px 0;
+            background: var(--bg-secondary);
         }
 
         .price {
             font-size: 48px;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--accent-dark);
             margin: 32px 0;
         }
 
@@ -431,32 +434,32 @@
             margin-bottom: 48px;
         }
 
-        /* Footer */
         footer {
             padding: 48px 0;
             text-align: center;
-            border-top: 1px solid var(--border-subtle);
+            border-top: 1px solid var(--border-color);
             color: var(--text-secondary);
             font-size: 16px;
+            background: var(--bg-primary);
         }
 
         footer a {
             color: var(--text-primary);
             text-decoration: none;
+            font-weight: 500;
         }
 
         footer a:hover {
-            color: var(--accent-blue);
+            color: var(--accent-dark);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             h1 {
-                font-size: 38px;
+                font-size: 36px;
             }
 
             h2 {
-                font-size: 32px;
+                font-size: 30px;
             }
 
             .hero {
@@ -465,12 +468,6 @@
 
             section {
                 padding: 80px 0;
-            }
-
-            .hero-bullets {
-                flex-direction: column;
-                align-items: center;
-                gap: 32px;
             }
 
             .fit-grid {
@@ -485,19 +482,22 @@
             .btn {
                 width: 100%;
             }
+
+            .container,
+            .container-narrow {
+                padding: 0 24px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">LEAD INFRASTRUCTURE</div>
+            <div class="logo">Lead Infrastructure</div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Your Leads Either Reach Your CRM — Or You're Notified Within 60 Seconds</h1>
@@ -506,29 +506,13 @@
                 A production-grade lead routing system that monitors every submission from form to CRM, catches failures before they become lost revenue, and gives you full audit logs of every lead that enters your business.
             </p>
 
-            <div class="hero-bullets">
-                <div class="hero-bullet">
-                    <strong>Zero Silent Failures</strong>
-                    <span>Every webhook timeout, CRM rejection, or integration error triggers an immediate alert</span>
-                </div>
-                <div class="hero-bullet">
-                    <strong>Complete Visibility</strong>
-                    <span>See exactly what happened to every lead, even months later</span>
-                </div>
-                <div class="hero-bullet">
-                    <strong>Built for Production</strong>
-                    <span>Retries, fallbacks, monitoring, and logging designed for real business environments</span>
-                </div>
-            </div>
-
             <div class="cta-group">
-                <a href="#demo" class="btn btn-primary">Watch a Real Lead Failure Get Caught (3-min demo)</a>
-                <a href="#contact" class="btn btn-secondary">Ask Technical Questions on WhatsApp →</a>
+                <a href="#demo" class="btn btn-primary">Watch How Lead Failures Actually Happen (3-min Demo)</a>
+                <a href="#contact" class="btn btn-secondary">Ask Technical Questions on WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section>
         <div class="container-narrow">
             <h2>The Problem Most Businesses Don't Know They Have</h2>
@@ -538,13 +522,13 @@
                 They click submit.<br>
                 Your system shows "Thank you."</p>
 
-                <p class="highlight-text">But the lead never reaches your CRM.</p>
+                <p class="highlight">But the lead never reaches your CRM.</p>
 
                 <p>No error message. No alert. No record it ever happened.</p>
 
                 <p>Your team assumes everything works because you tested it once. Your sales rep never follows up because they never saw the lead. The customer moves on to a competitor.</p>
 
-                <p class="highlight-text">You never knew what you lost.</p>
+                <p class="highlight">You never knew what you lost.</p>
             </div>
 
             <p>This isn't hypothetical. It's happening right now in businesses running on:</p>
@@ -560,59 +544,69 @@
         </div>
     </section>
 
-    <!-- Failure Modes -->
-    <section class="dark-section">
+    <section class="alt-bg">
         <div class="container-narrow">
             <h2>How Leads Fail (And Why You Don't Know)</h2>
-            <p>Five ways leads disappear after "Submit"</p>
 
             <div class="failure-grid">
                 <div class="failure-card">
-                    <h4>1. Webhook Timeout</h4>
+                    <h4>Webhook Timeout</h4>
                     <p>Your form sends data to Make.com or Zapier, but the request takes 31 seconds. The webhook times out. The lead is gone.</p>
                     <p class="impact">Business impact: Lost sale. No record. No retry.</p>
                 </div>
 
                 <div class="failure-card">
-                    <h4>2. CRM Validation Rejection</h4>
+                    <h4>CRM Validation Rejection</h4>
                     <p>Your CRM requires a phone number in a specific format. The lead submitted a valid number, but in the wrong format. HubSpot or Salesforce rejects it.</p>
                     <p class="impact">Business impact: Lead dropped. No one is notified. Form appears to work.</p>
                 </div>
 
                 <div class="failure-card">
-                    <h4>3. Auth Token Expiration</h4>
+                    <h4>Auth Token Expiration</h4>
                     <p>Your Google Sheets or CRM integration loses authentication at 2 AM on a Tuesday. Every lead submitted after that moment fails.</p>
                     <p class="impact">Business impact: Hours or days of silent failures before anyone notices.</p>
                 </div>
 
                 <div class="failure-card">
-                    <h4>4. Rate Limiting</h4>
+                    <h4>Rate Limiting</h4>
                     <p>Your integration hits the CRM's API rate limit during a traffic spike. Requests queue up, then fail.</p>
                     <p class="impact">Business impact: Leads delayed by 20+ minutes or dropped entirely.</p>
                 </div>
 
                 <div class="failure-card">
-                    <h4>5. Routing Collisions</h4>
+                    <h4>Routing Collisions</h4>
                     <p>Two leads submit within seconds. Your system assigns both to the same rep. The second lead is never followed up.</p>
                     <p class="impact">Business impact: Duplicate assignment or complete drop depending on your setup.</p>
                 </div>
             </div>
 
-            <p style="margin-top: 48px; font-size: 20px;" class="highlight-text">
-                None of these trigger alerts in standard setups.<br>
-                None show up in your CRM.<br>
-                None get retried.
+            <p style="margin-top: 48px; font-size: 19px; text-align: center;" class="highlight">
+                None of these trigger alerts in standard setups. None show up in your CRM. None get retried.
             </p>
         </div>
     </section>
 
-    <!-- Cost Section -->
+    <section class="proof-section">
+        <div class="container">
+            <h2>The System in Production</h2>
+            <p style="max-width: 700px; margin: 0 auto; color: var(--text-secondary);">
+                Real production workflow — monitored, logged, and auditable
+            </p>
+
+            <div class="proof-container">
+                <img src="downloads/looom.png" alt="Lead infrastructure workflow screenshot">
+                <p class="proof-caption">
+                    Every step captured, validated, and logged. Failures trigger immediate alerts. No lead disappears silently.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="container-narrow">
             <h2>What Silent Failures Actually Cost</h2>
-            <p>Let's use conservative numbers.</p>
 
-            <div class="cost-math">
+            <div class="cost-box">
                 <p>You run <strong>500 form submissions per month</strong>.<br>
                 Industry average failure rate: <strong>3–8%</strong> (webhooks, CRM rejections, auth issues).<br>
                 That's <strong>15–40 lost leads per month</strong> you never see.</p>
@@ -624,7 +618,7 @@
                     <li>10 lost leads = $30,000</li>
                 </ul>
 
-                <p style="margin-top: 32px;" class="highlight-text">But the real cost isn't just revenue.</p>
+                <p style="margin-top: 32px;" class="highlight">But the real cost isn't just revenue.</p>
 
                 <p>It's also:</p>
                 <ul>
@@ -637,7 +631,7 @@
                 <p class="cost-highlight">This system costs $1,497 once.</p>
             </div>
 
-            <p class="highlight-text" style="font-size: 20px;">It pays for itself if it prevents:</p>
+            <p class="highlight" style="font-size: 19px;">It pays for itself if it prevents:</p>
             <ul class="feature-list">
                 <li>One weekend of auth token expiry</li>
                 <li>One traffic spike that hits rate limits</li>
@@ -647,13 +641,12 @@
         </div>
     </section>
 
-    <!-- Solution -->
-    <section class="dark-section">
+    <section class="alt-bg">
         <div class="container-narrow">
             <h2>The Solution</h2>
             <h3>What This Actually Is</h3>
 
-            <p>This is <span class="highlight-text">production-grade lead infrastructure</span> — the routing, monitoring, and audit layer that should exist between your forms and your CRM.</p>
+            <p>This is <span class="highlight">production-grade lead infrastructure</span> — the routing, monitoring, and audit layer that should exist between your forms and your CRM.</p>
 
             <p>Built on <strong>Make.com</strong> (formerly Integromat), it's a complete event-driven system that:</p>
 
@@ -674,30 +667,26 @@
                 <li><strong>Not a template</strong> — This is a configured, production-ready system</li>
                 <li><strong>Not a marketing funnel</strong> — This is technical infrastructure, not landing pages or email sequences</li>
             </ul>
-
-            <p style="margin-top: 32px;">This is the layer that makes everything else reliable.</p>
         </div>
     </section>
 
-    <!-- Deliverables -->
     <section>
         <div class="container">
             <h2>What You Receive</h2>
-            <p>Complete system deliverables</p>
 
             <div class="deliverables-grid">
                 <div class="deliverable-card">
-                    <h4>✓ Pre-Built Make.com Scenarios</h4>
+                    <h4>Pre-Built Make.com Scenarios</h4>
                     <ul>
                         <li>Lead ingress & validation</li>
-                        <li>CRM routing (HubSpot, Salesforce, Pipedrive, or custom API)</li>
+                        <li>CRM routing for major platforms</li>
                         <li>Email/SMS notification workflows</li>
                         <li>Retry logic with exponential backoff</li>
                     </ul>
                 </div>
 
                 <div class="deliverable-card">
-                    <h4>✓ Monitoring & Alerting</h4>
+                    <h4>Monitoring & Alerting</h4>
                     <ul>
                         <li>Real-time failure detection</li>
                         <li>WhatsApp, email, or SMS alerts</li>
@@ -706,7 +695,7 @@
                 </div>
 
                 <div class="deliverable-card">
-                    <h4>✓ Audit Logging System</h4>
+                    <h4>Audit Logging System</h4>
                     <ul>
                         <li>Every lead stored in Airtable or Google Sheets</li>
                         <li>Timestamps, status, error messages</li>
@@ -715,16 +704,16 @@
                 </div>
 
                 <div class="deliverable-card">
-                    <h4>✓ CRM & Communication Integrations</h4>
+                    <h4>CRM & Communication Integrations</h4>
                     <ul>
                         <li>Pre-configured connections to major CRMs</li>
-                        <li>Twilio, SendGrid, or similar for notifications</li>
+                        <li>Twilio, SendGrid for notifications</li>
                         <li>Slack/WhatsApp for internal alerts</li>
                     </ul>
                 </div>
 
                 <div class="deliverable-card">
-                    <h4>✓ Documentation</h4>
+                    <h4>Documentation</h4>
                     <ul>
                         <li>Architecture overview</li>
                         <li>How to connect your tools</li>
@@ -733,7 +722,7 @@
                 </div>
 
                 <div class="deliverable-card">
-                    <h4>✓ 30-Day Technical Support</h4>
+                    <h4>30-Day Technical Support</h4>
                     <ul>
                         <li>WhatsApp or email access</li>
                         <li>Configuration help</li>
@@ -752,17 +741,15 @@
             <h3 style="margin-top: 48px;">What's NOT Included</h3>
             <ul class="not-list">
                 <li>Custom development — This is a configured system, not bespoke software</li>
-                <li>Form building — You bring your existing forms (Typeform, Webflow, custom, etc.)</li>
+                <li>Form building — You bring your existing forms</li>
                 <li>CRM setup — Your CRM must already exist and be accessible via API</li>
             </ul>
         </div>
     </section>
 
-    <!-- Architecture -->
-    <section class="dark-section">
+    <section class="alt-bg">
         <div class="container-narrow">
             <h2>System Architecture</h2>
-            <p>How it works (5 core layers)</p>
 
             <div class="architecture-grid">
                 <div class="architecture-layer">
@@ -775,7 +762,7 @@
                 <div class="architecture-layer">
                     <span class="layer-number">2</span>
                     <h4>Persistence Layer</h4>
-                    <p><strong>What it does:</strong> Writes every lead to a secure datastore (Airtable/Sheets) before routing.</p>
+                    <p><strong>What it does:</strong> Writes every lead to a secure datastore before routing.</p>
                     <p><strong>What it prevents:</strong> Total data loss if CRM is down. Gives you a source of truth.</p>
                 </div>
 
@@ -789,7 +776,7 @@
                 <div class="architecture-layer">
                     <span class="layer-number">4</span>
                     <h4>Monitoring & Retry</h4>
-                    <p><strong>What it does:</strong> Detects timeouts, auth failures, rate limits. Retries failed requests up to 3 times with delays.</p>
+                    <p><strong>What it does:</strong> Detects timeouts, auth failures, rate limits. Retries failed requests automatically.</p>
                     <p><strong>What it prevents:</strong> Temporary failures becoming permanent losses.</p>
                 </div>
 
@@ -800,54 +787,46 @@
                     <p><strong>What it prevents:</strong> "What happened to this lead?" conversations. Compliance gaps. Mystery losses.</p>
                 </div>
             </div>
-
-            <p style="margin-top: 48px; font-size: 20px;" class="highlight-text">
-                Most businesses connect forms directly to CRMs.<br>
-                That works — until it doesn't.<br><br>
-                This system adds the reliability layer that production environments require.
-            </p>
         </div>
     </section>
 
-    <!-- Who It's For -->
     <section>
         <div class="container">
             <h2>Who This Is For / Not For</h2>
 
             <div class="fit-grid">
                 <div class="fit-column">
-                    <h3>✓ This Is a Good Fit If You:</h3>
+                    <h3>This Is a Good Fit If You:</h3>
                     <ul>
                         <li>Collect 50+ leads per month where each lead has real business value</li>
                         <li>Use Make.com, Zapier, or custom webhooks to route leads to a CRM</li>
                         <li>Have experienced "leads that never showed up" or delayed notifications</li>
                         <li>Need audit logs for compliance, debugging, or reporting</li>
                         <li>Want to eliminate silent failures without hiring a developer</li>
-                        <li>Run a technical or high-value service business (agencies, SaaS, consulting, B2B services)</li>
+                        <li>Run a technical or high-value service business</li>
                     </ul>
                 </div>
 
                 <div class="not-fit-column">
-                    <h3>✕ This Is NOT a Fit If You:</h3>
+                    <h3>This Is NOT a Fit If You:</h3>
                     <ul>
-                        <li>Collect fewer than 30 leads per month (ROI won't justify the setup)</li>
+                        <li>Collect fewer than 30 leads per month</li>
                         <li>Don't use a CRM or lead management system</li>
-                        <li>Need a complete marketing funnel, landing pages, or email sequences (this is infrastructure only)</li>
+                        <li>Need a complete marketing funnel or landing pages</li>
                         <li>Expect this to work without any technical setup on your end</li>
-                        <li>Want a plug-and-play SaaS dashboard (this runs on Make.com, which you control)</li>
+                        <li>Want a plug-and-play SaaS dashboard</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Guarantee -->
-    <section class="dark-section">
+    <section class="alt-bg">
         <div class="container-narrow">
             <h2>30-Day Infrastructure Guarantee</h2>
 
             <div class="guarantee-box">
-                <p class="highlight-text" style="font-size: 20px; margin-bottom: 24px;">
+                <p class="highlight" style="font-size: 19px; margin-bottom: 24px;">
                     If the system doesn't perform as described — if leads fail silently, if monitoring doesn't alert you, or if the audit logs don't provide the visibility promised — we'll refund your payment in full within 30 days.
                 </p>
 
@@ -863,25 +842,24 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
     <section class="final-cta">
         <div class="container-narrow">
             <h2>Stop Losing Leads You'll Never Know About</h2>
 
-            <p style="font-size: 20px; margin: 32px auto 48px; max-width: 700px;">
+            <p style="font-size: 19px; margin: 32px auto 48px; max-width: 700px; color: var(--text-secondary);">
                 Every day you run without monitoring is another day a lead could fail silently. No alerts. No logs. No retry. Just gone.
             </p>
 
             <div class="price">$1,497</div>
             <p class="price-details">One-time payment. No monthly fees. No vendor dependency. Full control.</p>
 
-            <p style="margin-bottom: 48px; font-size: 18px;">
+            <p style="margin-bottom: 48px; font-size: 18px; color: var(--text-secondary);">
                 It either prevents silent failures and gives you complete visibility — or you get your money back.
             </p>
 
             <div class="cta-group">
-                <a href="#demo" class="btn btn-primary">Watch the 3-Minute Demo: See a Lead Failure Get Caught →</a>
-                <a href="#contact" class="btn btn-secondary">Message Us on WhatsApp — Technical Questions Answered Fast</a>
+                <a href="#demo" class="btn btn-primary">Watch the System Catch a Failed Lead</a>
+                <a href="#contact" class="btn btn-secondary">Message Us on WhatsApp — Fast Technical Response</a>
             </div>
 
             <p style="margin-top: 64px; color: var(--text-secondary); font-size: 16px;">
@@ -890,10 +868,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Questions? <a href="#contact">WhatsApp: +1 (555) 000-0000</a> | <a href="mailto:hello@example.com">Email: hello@example.com</a></p>
+            <p>Questions? <a href="https://wa.me/15550000000">WhatsApp: +1 (555) 000-0000</a> | <a href="mailto:hello@example.com">Email: hello@example.com</a></p>
             <p style="margin-top: 16px; font-size: 14px;">© 2025 Lead Infrastructure System. All rights reserved.</p>
         </div>
     </footer>
