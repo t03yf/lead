@@ -868,4 +868,35 @@
         <div class="container-narrow">
             <h2>Stop Losing Leads You'll Never Know About</h2>
 
-            <p style="font-size: 20px; margin:
+            <p style="font-size: 20px; margin: 32px auto 48px; max-width: 700px;">
+                Every day you run without monitoring is another day a lead could fail silently. No alerts. No logs. No retry. Just gone.
+            </p>
+
+            <div class="price">$1,497</div>
+            <p class="price-details">One-time payment. No monthly fees. No vendor dependency. Full control.</p>
+
+            <p style="margin-bottom: 48px; font-size: 18px;">
+                It either prevents silent failures and gives you complete visibility — or you get your money back.
+            </p>
+
+            <div class="cta-group">
+                <a href="#demo" class="btn btn-primary">Watch the 3-Minute Demo: See a Lead Failure Get Caught →</a>
+                <a href="#contact" class="btn btn-secondary">Message Us on WhatsApp — Technical Questions Answered Fast</a>
+            </div>
+
+            <p style="margin-top: 64px; color: var(--text-secondary); font-size: 16px;">
+                Includes complete system, integrations, documentation, and 30 days of technical support.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Questions? <a href="#contact">WhatsApp: +1 (555) 000-0000</a> | <a href="mailto:hello@example.com">Email: hello@example.com</a></p>
+            <p style="margin-top: 16px; font-size: 14px;">© 2025 Lead Infrastructure System. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
