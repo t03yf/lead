@@ -923,4 +923,179 @@
             </div>
 
             <div class="scope-clarification">
-                <strong style="color: var(--text-secondary);">Implementation scope:</strong> You (or your technical operator) connect the system to your specific tools—your CRM instance, your Slack workspace, your
+                <strong style="color: var(--text-secondary);">Implementation scope:</strong> You (or your technical operator) connect the system to your specific tools—your CRM instance, your Slack workspace, yourspecific notification channels, and your APIs. No custom development included.
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SYSTEM MODULES – TECHNICAL BREAKDOWN
+         ======================================== -->
+    <section class="section">
+        <div class="container">
+            <h2>System Architecture Overview</h2>
+
+            <p class="subhead">
+                Each module exists to eliminate a specific class of silent failure.
+                Nothing here is optional. Nothing here is decorative.
+            </p>
+
+            <div class="module-list">
+                <div class="module-card">
+                    <h3>Ingress & Validation Layer</h3>
+                    <p class="module-purpose">
+                        Receives every lead event, validates payload structure, and normalizes data before processing.
+                    </p>
+                    <p class="module-why">
+                        Why it exists: Prevents malformed data from silently failing downstream integrations.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Routing & Decision Engine</h3>
+                    <p class="module-purpose">
+                        Applies deterministic rules for qualification, ownership assignment, and prioritization.
+                    </p>
+                    <p class="module-why">
+                        Why it exists: Eliminates race conditions, double-assignments, and unowned leads.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Persistence & CRM Sync</h3>
+                    <p class="module-purpose">
+                        Writes validated lead data into your CRM with retry logic and error handling.
+                    </p>
+                    <p class="module-why">
+                        Why it exists: Ensures leads are either stored correctly or explicitly flagged as failed.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Monitoring & Alerting</h3>
+                    <p class="module-purpose">
+                        Tracks execution status, failures, and delays across the entire workflow.
+                    </p>
+                    <p class="module-why">
+                        Why it exists: So failures are detected immediately — not discovered weeks later.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Audit & Traceability Layer</h3>
+                    <p class="module-purpose">
+                        Maintains a searchable record of every event, action, and outcome.
+                    </p>
+                    <p class="module-why">
+                        Why it exists: Enables post-mortems, compliance checks, and operational certainty.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         QUALIFICATION SECTION
+         ======================================== -->
+    <section class="section">
+        <div class="container">
+            <h2>Who This System Is (and Is Not) For</h2>
+
+            <div class="qual-grid">
+                <div class="qual-column fit">
+                    <h3>Good Fit</h3>
+                    <ul>
+                        <li>You process leads daily and depend on them for revenue</li>
+                        <li>You rely on automations, integrations, or CRMs</li>
+                        <li>You care about reliability more than aesthetics</li>
+                        <li>You want visibility into what actually happens after “Submit”</li>
+                    </ul>
+                </div>
+
+                <div class="qual-column not-fit">
+                    <h3>Not a Fit</h3>
+                    <ul>
+                        <li>You receive very few leads and don’t care if some are lost</li>
+                        <li>You want a marketing funnel or landing page redesign</li>
+                        <li>You expect custom development or bespoke engineering</li>
+                        <li>You are looking for a SaaS subscription or tool</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GUARANTEE
+         ======================================== -->
+    <section class="section">
+        <div class="container">
+            <h2>Operational Guarantee</h2>
+
+            <div class="guarantee-container">
+                <h3>30-Day Infrastructure Guarantee</h3>
+                <p>
+                    If you deploy the system as documented and it does not materially improve
+                    lead visibility, reliability, or response certainty within 30 days,
+                    you can request a full refund.
+                </p>
+
+                <div class="guarantee-exclusions">
+                    <h4>Exclusions</h4>
+                    <p>
+                        This guarantee does not cover incorrect configuration, unsupported tools,
+                        or failure to follow the provided setup documentation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FINAL CTA – DECISION POINT
+         ======================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Install the Lead Infrastructure</h2>
+
+            <p class="subhead">
+                Stop guessing what happens to your leads.
+                Deploy a system that makes every outcome visible.
+            </p>
+
+            <div class="price-line">
+                One-time deployment • <strong>$1,497</strong> • No subscriptions
+            </div>
+
+            <a href="#" class="cta-button">
+                Deploy the Lead Infrastructure
+            </a>
+
+            <div class="cta-details">
+                Immediate access • Make.com based • Operator-grade documentation
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER – WHATSAPP CONTACT
+         ======================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-contact">
+                <h3>Have questions about fit or deployment?</h3>
+                <p>Message us directly on WhatsApp for a fast, technical response.</p>
+                <a 
+                    href="https://wa.me/213676127853" 
+                    target="_blank" 
+                    class="whatsapp-button">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
